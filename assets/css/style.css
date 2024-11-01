@@ -1,0 +1,638 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  cursor :url(../img/cur.ico),auto;
+}
+/* 媒体查询 */
+@media (max-width: 600px) {
+  .container {
+      padding: 10px;
+  }
+}
+
+.sidebar {
+  opacity: 1;
+  width: 14vw; /* 大约是屏幕宽度的1/7 */
+  top:10vh; 
+  height: 90vh; /* 垂直高度充满整个视口 */
+  background-color: #0b0909;
+  color: rgb(17, 14, 14);
+  float: left;
+  position: fixed; /* 固定位置 */
+  transition: 0.3s; /* 添加过渡效果 */
+}
+.upperbar {
+  opacity: 1;
+  width: 100vw; /* 大约是屏幕宽度的1/7 */
+  top:0vh; 
+  height: 8vh; /* 垂直高度充满整个视口 */
+  background-color: #2d0063; ;
+  color: rgb(255, 255, 255);
+  float: left;
+  position: fixed; /* 固定位置 */
+  transition: 0.3s; /* 添加过渡效果 */
+}
+
+.sidebar.collapsed {
+  width: 0vw; /* 收起时的宽度 */
+}
+
+.sidebar ul {
+  background-color: #0b0909;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  transition: 0.3s; /* 添加过渡效果 */
+}
+.sidebar.collapsed ul{
+  display: none;
+}
+.sidebar ul li {
+  cursor: pointer;
+  width: 12vw;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li:hover {
+  background-color: #333; /* 鼠标悬停时改变背景颜色 */
+  scale: 1.2;
+}
+
+.sidebar-close {
+  position: fixed;
+  border: none;
+  color: white;
+  padding: 1px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(to right, #047fc6, #9d07c3, rgb(248, 202, 123));
+  z-index: -1;
+}
+
+@keyframes flowAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.content {
+  background-color: #ff6347; /* 基础背景颜色 */
+  background-image: linear-gradient(45deg, 
+                                    rgba(148, 142, 142, 0.22), 
+                                    rgba(247, 124, 102, 0.12) 25%, 
+                                    rgba(184, 249, 21, 0.27) 50%, 
+                                    rgba(234, 234, 111, 0.645) 75%, 
+                                    rgba(131, 255, 103, 0.5));
+  background-size: 200% 200%;
+  color: white;
+  margin-left: 14vw; /* 留出边栏的空间 */
+  padding-left: 2vw;
+  transition: 0.3s; /* 添加过渡效果 */
+  border: 0.5vh solid #ffffff;
+  border-radius: 8%;
+  height: 100vh;
+  animation: flowAnimation 1s linear infinite alternate; /* 添加流动动画 */
+}
+
+.content.collapsed {
+  margin-left: 0vw; /* 收起时的左边距 */
+}
+/*gradient*/
+.gradient-border {
+  position: relative;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center; 
+  font-size: 4vh;
+  color: rgb(255, 255, 255); 
+  height: 10vh;
+  top: -5vh;
+  padding: 0vh;
+  background-color: white;
+  z-index: 1;
+  
+}
+.gradient-border::before {
+  content: '';
+ 
+  position: absolute;
+  top: -1vh;
+  left: -1vw;
+  right: -0.1vw;
+  bottom: -1vh;
+  background: linear-gradient(270deg, #047fc6, #9d07c3, rgb(248, 202, 123));
+  background-size: 600% 600%;
+  z-index: -1;
+  border-radius: 4vh; /* 可选：如果需要圆角边框 */
+  animation: gradientAnimation 4s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border.collapsed{
+  display: none;
+}
+
+/* 3D Text Effect */
+.three-d-text {
+  text-shadow: 0.3vh 0.3vh 0 #ffffff, 0.6vh 0.6vh 0 #ffffff, 0.7vh 0.7vh 0 #ffffff, 0.8vh 0.8vh 0 #000, 1.4vh 1.4vh 0 #000;
+  color: #fff;
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* 设置按钮和搜索框的容器样式 */
+
+.button-text {
+  font-size: 3vh;
+  margin-left: 10px;
+}
+
+.search-container {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  left: 15vw;
+  top: 1.05vh;
+  width: 30vw;
+  height: 5vh;
+  align-items: center;
+  background-color: #333; /* 深色背景 */
+  border-radius: 2vh;
+}
+.search-box {
+  position: fixed;
+  top: 1.15vh;
+  left: 17vw;
+  width: 23vw;
+  height: 2vh;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 2vh;
+  font-size: 2.5vh;
+  background-color:transparent; /* 深色背景 */
+  color: white;
+
+}
+ /* 设置搜索图标样式 */
+ .search-icon {
+  color: white; /* 图标颜色 */
+  margin-right: 10px;
+  width:3vh;
+}
+
+.search-box::placeholder {
+  color: #aaa; /* 占位符颜色 */
+}
+
+.nav{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  background-color: #3c3636; /* 背景颜色 */
+  border-radius: 5px;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 5vw;
+  color: white;
+}
+.nav a{
+  display: block;
+  color: white; /* 字体颜色 */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 1.5vw; /* 字体大小 */
+  transition: background-color 0.3s ease;
+}
+.nav a:hover {
+  background-color: #575757; /* 悬停时的背景颜色 */
+  border-radius: 5px;
+}
+
+.lead-text{
+  position: relative;
+  font-size: 6vh;
+  font-family: 'Lobster',cursive;
+}
+
+.golden-text {
+
+  font-family: 'Lobster', cursive;
+  color: transparent; /* 金色 */
+  background: linear-gradient(90deg, #fedf30, #fffacd, #ffe344);
+  background-size: 200% 200%;
+  animation: gold-glow 3s linear infinite;
+  -webkit-background-clip: text;
+
+}
+
+@keyframes gold-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.binary-text-container{
+  justify-content: center;
+  background-color: #ffffff4f;
+  align-items: center;
+  height: 30vh;
+  width: 30vw;
+  position: absolute;
+  border-radius: 20%;
+  border: 0.5vh solid #000;
+  left: 60vw;
+  top: 8vh;
+  font-size: 0.5vh;
+  
+}
+
+.binary-text {
+  font-size: 0.5vh;
+  position: relative;
+  font-family: Pacifico, cursive;
+  color: #8900af; 
+  font-weight: bolder;
+  display: inline-block;
+  animation: binary-glow 10s infinite;
+  animation-fill-mode: forwards;
+}
+
+.binary-text span {
+  animation: binary-glow 3s infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes binary-glow {
+  0%, 100% { color:  #333333; ; transform: scale(1); transform: translate(0vw,0);}
+  
+  50% { color:transparent; transform: scale(2);transform: translate(0vw,6vh);}
+}
+
+.binary-text span:nth-child(odd) {
+  animation-delay: 2.2s;
+}
+
+.binary-text span:nth-child(even) {
+  animation-delay: 1s;
+}
+/*下拉线*/
+.right-line {
+  transform-origin: center top;
+  position: fixed;
+  top: 0;
+  right: 4vw;
+  height: 60vh;
+  width: 0.5vw;
+  background-color: #000;
+  z-index: 1000;
+  cursor: pointer; /* 添加指针，表示可点击 */
+  transition: height 1s ease; /* 平滑过渡效果 */
+  animation: dynamic-collapsed 2s infinite alternate; 
+}
+
+.right-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5vw;
+  right: -2.5vw;
+  width: 5vw;
+  height: 5vw;
+  background-image: url('http://q2.qlogo.cn/headimg_dl?dst_uin=2041584846&spec=100');
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+}
+.right-line.collapsed{
+  height: 10vh;
+}
+
+@keyframes dynamic-collapsed {
+  0%  {
+
+    transform:  rotate(-3deg);
+
+    
+  }
+  100% {
+
+    transform:  rotate(16deg);
+
+    
+  }
+
+  
+}
+
+
+.codeBox {
+  position: absolute;
+  top: 40vh;
+  right: 16vw;
+  width: 36vw;
+  height: 53vh;
+  background-color: #333;
+
+
+  padding-left: 1vw;
+  font-size: 2.5vh;
+  line-height: 2.6vh;
+  border: 0.5vh solid #000;
+  border-radius: 5px;
+  /* 3D立体效果 */
+  transform: rotateY(0deg) translateZ(50px);
+  transition: transform 1s;
+  /* 阴影效果 */
+  box-shadow: 
+    -5vh 3vh 1vh rgba(0, 0, 0, 0.5),
+    /* 前阴影，增强立体感 */
+    0 0 3vh rgba(0, 0, 0, 0.5),
+    /* 底部阴影，让盒子看起来浮起 */
+    0 1vh 0vh rgba(0, 0, 0, 0.3);
+    transform:scale(1.1);
+}
+
+/* 当鼠标悬停在.codeBox上时，增强3D效果 */
+.codeBox:hover {
+  transform :scale(1.2);
+  
+}
+
+.codeBox2 {
+  position: absolute;
+  top: 44vh;
+  right: -3vw;
+  width: 36vw;
+  height: 57vh;
+  background-color: #333;
+
+
+  padding-left: 1vw;
+  font-size: 2.5vh;
+  line-height: 2.6vh;
+  border: 0.5vh solid #000;
+  border-radius: 5px;
+  /* 3D立体效果 */
+  transform: rotateY(50deg) translateZ(50px);
+  transition: transform 1s;
+  /* 阴影效果 */
+  box-shadow: 
+    -5vh 3vh 1vh rgba(0, 0, 0, 0.5),
+    /* 前阴影，增强立体感 */
+    0 0 3vh rgba(0, 0, 0, 0.5),
+    /* 底部阴影，让盒子看起来浮起 */
+    0 1vh 0vh rgba(0, 0, 0, 0.3);
+}
+
+/* 当鼠标悬停在.codeBox上时，增强3D效果 */
+.codeBox2:hover {
+  
+}
+
+
+.editor-container {
+  position: relative;
+  top: 10vh;
+  width: 80vw;
+  height: 80vh;
+  margin: 20px auto;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.textInput{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  line-height: 1.5;
+  color: transparent;
+  background: none;
+  border: none;
+  resize: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.codeOutput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  line-height: 1.5;
+  color: #fff;
+  background: none;
+  border: none;
+  resize: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+
+.textInput {
+  z-index: 1;
+  background-color: transparent;
+  caret-color: transparent;
+}
+
+.codeOutput {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1px;
+  background-color: black;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+
+/*type*/
+#typing-container {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+}
+
+
+
+.test{
+  color: #920000;
+}
+
+.codeButtonContainer {
+  position: relative;
+  top: -15vh;
+}
+@keyframes obsidianGlow {
+  0% {
+    border-image-source: linear-gradient(45deg, #fae3a2, #ff0000, #f307ff, #e0fb57);
+    border-image-slice: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.5), 0 0 70px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #05f3ff, #0cffc2, #0f0c29, #c0c0c0);
+    border-image-slice: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 1), 0 0 70px rgba(255, 255, 255, 1);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #0aff91, #0db5fd, #8f06ff, #c0c0c0);
+    border-image-slice: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.5), 0 0 70px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.codeButton {
+  position: relative;
+  left: 4vw;
+  width: 12vw;
+  height: 12vh;
+  font-size: 4vh;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 40%; /* 圆滑边框 */
+  color: #07f3ff;
+  border: 1vh solid transparent;
+  animation: obsidianGlow 3s linear infinite;
+  background-color: #000000; /* 黑色背景 */
+  padding: 1vh; /* 内边距 */
+  background-clip: padding-box, border-box;
+  transition: 1s;
+}
+
+.codeButton:hover {
+  color: #fe0000;
+  cursor: pointer;
+  transform :scale(1.2);
+  background-color: #000000; /* 黑色背景 */
+}
+
+.login {
+  position: fixed;
+  top: 0.2vh;
+  right: 14vw;
+  width: 5vw;
+  height: 6vh;
+  color: #000;
+  text-align: center;
+  border: rgb(0, 0, 0) 0.3vh solid;
+  border-radius: 10%;
+  background-color: #0cd92e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* 添加阴影 */
+  transition: transform 0.2s; /* 添加过渡效果 */
+}
+
+.login:hover {
+  transform: translateY(-2px); /* 鼠标悬停时上移 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08); /* 鼠标悬停时阴影变化 */
+}
+
+.dropdown-container {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
+}
+
+.dropdown-container label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.dropdown-container select {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1em;
+  padding: 5px;
+}
+
+.run{
+  z-index: 3;
+  position: relative;
+  left: 64vw;
+  bottom: 5vh;
+  width: 12vw;
+  height: 7vh;
+  text-align: center;
+  color: black;
+  font-size: 5vh;
+  background-color: #0cd92e;
+  border: 0.7vh solid #000;
+  border-radius: 40%;
+  font-weight: bolder;
+}
+
+.run:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.result{
+  display: none;
+  z-index: 1;
+  position: relative;
+  bottom: 30vh;
+  width: 60vw;
+  left: -10vw;
+  height: 30vh;
+  margin: 20px auto;
+  background-color: #000000;
+  border: 1px solid #555;
+  border-radius: 5px;
+  overflow: hidden;
+
+}

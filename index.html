@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCD(AboyCode)beta</title>
+    <link rel="stylesheet" href="./assets/code/styles/an-old-hope.min.css">
+    <style>@import url('./assets/css/style.css');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');</style>  <!--sans-serif-->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>  <!--cursive-->>
+</head>
+<body>
+    <div class="right-line" id="rightLine"></div>
+
+    <div class="upperbar">
+        <button class="sidebar-close" id="sidebar-close" style="font-size: 5vh;">☰<font size="3vh">ABCD Editor(beta)</font></button>
+        <div class="search-container" >
+        <span class="search-icon"><img style="width:6vh" src="./assets/img/search.png" alt="search"></span>;
+        <input type="text" class="search-box" placeholder="Search Code...">
+        </div>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        
+        <p class="gradient-border three-d-text" id="left-gradients">Aboy Online Editor</p>
+        <ul class="nav">
+            <li><a href="#home">HomePage</a></li>
+            <li><a href="#about">DOCument</a></li>
+            <li><a href="#services">OnlineTool <span style="background-color: rgb(255, 225, 0);color:black;font-size:1vh;padding-inline:10px;font-weight:900">pro</span></a></li>
+            <li><a href="#contact">About</a></li>
+
+        </ul>
+    </div>
+    <div class="content" >
+        <img src="./assets/img/aboy.png" alt="flag" style="position:fixed;top:-5vh;right:4vw;width:10%;transform:scale(1);">
+        <br><br>
+        <p class="lead-text">
+            <strong>ABCD</strong>(AboyCode)&emsp;&emsp;&emsp;&emsp;support: <br>simply and powerfully <br>helps you<br> <strong><span style="position:relative;left:6vw;top:2vh;font-size:8vh">Coding Online</span></strong> <br>
+        </p>
+        <div class="golden-text">
+            <!-- 将每个字符包裹在<span>标签中 -->
+                Online compilation, and study CS. <br>&emsp;&emsp;ABCD offers a wide range of tools and features <br>to help you master a computer language <br>faster, easier, and more efficiently.<br>&emsp;&emsp; With ABCD, you can easily make your file <br>using C/CPP,Python,lua,lisp,go,javaHTML, CSS, JavaScript<br>and more languages
+        <br><br></div>
+        <div class="binary-text-container">
+            <div class="binary-text">
+                <span>C</span>&emsp;<span>CPP</span>&emsp;<span>PYTHON</span>&emsp;<span>JAVA</span>&emsp;<span>LUA</span>&emsp;<span>R</span>&emsp;<span>LISP</span>&emsp;<span>HTML</span>&emsp;<span>CSS</span><br><br><span>JavaScript</span>&emsp;<span>GO</span>&emsp;<span></span>&emsp;<span>Rust</span>&emsp;<span>D</span>&emsp;<span>C#</span>&emsp;<span>MATLAB</span>&emsp;<span>Ruby</span>&emsp;<span>PHP</span><br><br><span>Perl</span>&emsp;<span>Logo</span>&emsp;<span>Scratch</span>&emsp;<span>Hy</span>&emsp;<span>TypeScript</span>&emsp;<span>Julia</span>&emsp;<span>Eiffel</span>&emsp;<br><br><span>ABC</span>&emsp;<span>Ada</span>&emsp;<span>Bash</span>&emsp;<span>F#</span>&emsp;<span>SQL</span>&emsp;<br>     
+            </div>
+        </div>
+        <br><br><br><br><br>
+      
+        <div class="codeBox">        
+        <span style="position: absolute;left:50vh;top:0vh;color:gray"><img style="width: 3vh;position:absolute;top:0vh;left:-1.7vw" src="./assets/img/cpp.png">Duff' device.cpp<span style="color: white;">•</span><span style="position: absolute;font-size:3vw;left:-22vw"><span style="color: #d60000;">•</span><span style="color: #02db43;">•</span><span style="color: #0540f4;">•</span></span></span>
+
+<br>
+<span style="color: #e354fd;font-weight:bold">#include</span><span style="color:#a75624;font-weight:bold">&lt;iostream></span><br>
+<span style="color: #e354fd;font-weight:bold">#include</span><span style="color:#a75624;font-weight:bold">&lt;ctime></span><br>
+<strong><span id="typed-text"></span><span id="cursor">|</span></strong><br>
+<span style="color: #e354fd;font-weight:bold">using</span> <span style="color:#1e79b9;font-weight:bold">namespace</span> <span style="color: #11a211;font-weight:bold">std</span>;<br>
+<span style="color:#1e79b9;font-weight:bold">int</span> <span style="color:#ffff2c;font-weight:bold">main</span><span style="color:#b98a1e;font-weight:bold">() {</span> <br>
+&emsp;&emsp;<span style="color:#1e79b9;font-weight:bold">int</span> <span style="color:#1e79b9;font-weight:bold">*</span><span style="color:#2eeefc;font-weight:bold">to</span>,<span style="color:#1e79b9;font-weight:bold">*</span><span style="color:#2eeefc;font-weight:bold">from</span>;<br>
+&emsp;&emsp;<span style="color: #11a211;font-weight:bold">std</span>::<span style="color: #11a211;font-weight:bold">default_random_engine </span><span style="color:#2eeefc;font-weight:bold">eng</span>;<br>
+&emsp;&emsp;<span style="color: #11a211;font-weight:bold">std</span>::<span style="color: #11a211;font-weight:bold">unifom_int_distribution </span><span style="color:#2eeefc;font-weight:bold">u</span>;<br>
+&emsp;&emsp;<span style="color:#2eeefc;font-weight:bold">eng</span>.<span style="color:#ffff2c;font-weight:bold">seed</span><span style="color:#e354fd;font-weight:bold">(</span><span style="color:#1e79b9;font-weight:bold">(</span><span style="color:#ffff2c;font-weight:bold">time</span></span><span style="color:#b98a1e;font-weight:bold">(</span><span style="color:#1e92b9;font-weight:bold">NULL</span>)</span><span style="color:#1e79b9;font-weight:bold">)</span><span style="color:#e354fd;font-weight:bold">)</span>;<br>
+&emsp;&emsp;<span style="color:#1e79b9;font-weight:bold">int</span> <span style="color:#2eeefc;font-weight:bold">count</span>=<span style="color:#2eeefc;font-weight:bold">u</span><span style="color: #e354fd;font-weight:bold">(</span><span style="color:#2eeefc;font-weight:bold">eng</span><span style="color: #e354fd;font-weight:bold">)</span>,<span style="color:#2eeefc;font-weight:bold">n</span>=<span style="color: #e354fd;font-weight:bold">(</span><span style="color:#2eeefc;font-weight:bold">vount</span>+3<span style="color: #e354fd;font-weight:bold">)</span>/4;<br>
+&emsp;&emsp;<span style="color: #e354fd;font-weight:bold">switch(</span><span style="color: #e354fd;font-weight:bold">count</span>%8<span style="color: #e354fd;font-weight:bold">)</span>{<br>
+&emsp;&emsp;&emsp;&emsp;<span style="color: #e354fd;font-weight:bold">case</span> 0:<span style="color: #e354fd;font-weight:bold">do</span>{ *<span style="color:#2eeefc;font-weight:bold">to</span> = *<span style="color:#2eeefc;font-weight:bold">from</span>++;<br>
+&emsp;&emsp;&emsp;&emsp;<span style="color: #e354fd;font-weight:bold">case</span> 3: *<span style="color:#2eeefc;font-weight:bold">to</span> = *<span style="color:#2eeefc;font-weight:bold">from</span>++;<br>
+&emsp;&emsp;&emsp;&emsp;<span style="color: #e354fd;font-weight:bold">case</span> 2: *<span style="color:#2eeefc;font-weight:bold">to</span> = *<span style="color:#2eeefc;font-weight:bold">from</span>++;<br>
+&emsp;&emsp;&emsp;&emsp;<span style="color: #e354fd;font-weight:bold">case</span> 1: *<span style="color:#2eeefc;font-weight:bold">to</span> = *<span style="color:#2eeefc;font-weight:bold">from</span>++;<br>
+&emsp;&emsp;<span style="color:#1e79b9;font-weight:bold">}</span><span style="color: #e354fd;font-weight:bold">while</span><span style="color:#1e79b9;font-weight:bold">(</span>--<span style="color:#2eeefc;font-weight:bold">n</span>>0<span style="color:#1e79b9;font-weight:bold">)</span>;<br>
+} <span style="color: #e354fd;font-weight:bold">return</span> 0;} <br>
+            </div>
+
+            <div class="codeBox2">
+                <span style="position: absolute;left:50vh;top:0vh;color:gray"><img style="width: 3vh;position:absolute;top:0vh;left:-1.7vw" src="./assets/img/python.png">flask.cpp<span style="color: white;">•</span><span style="position: absolute;font-size:3vw;left:-22vw"><span style="color: #d60000;">•</span><span style="color: #02db43;">•</span><span style="color: #0540f4;">•</span></span></span>
+                
+<pre><code style="background-color: transparent;font-weight:550">from flask import Flask,request,jsonify
+from flask import render_template
+from gevent import pywsgi
+from datetime import datetime
+
+app = Flask(__name__)
+@app.route('/&lt;string:pg1>/&lt;string:id>')
+def api(pg1, id):
+    if(pg1=="api"):    
+        if(id=='xxx'):
+            from.binding.python.xdbSearcher\
+             import XdbSearcher 
+            client_ip = request.headers.\
+            get('X-Forwarded-For', request.remote_addr)
+            try:
+                def searchWithFile():
+                    dbPath = "./ip/data/ip2region.xdb"
+                    searcher = XdbSearcher(dbfile=dbPath)
+                </code></pre>
+            </div>
+            <div class="codeButtonContainer">
+                <button  id="codeButton" class="codeButton">Coding</button>
+            </div>
+    <div class="login">
+        <strong>Log In</strong>
+    </div>
+        </div>
+    
+
+    <script src="./assets/code/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="./assets/js/style.js"></script>
+</body>
+</html
